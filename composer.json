@@ -1,0 +1,37 @@
+{
+  "name": "artox-lab/clarc-rbac-bundle",
+  "type": "library",
+  "description": "Access control bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lerna",
+      "homepage": "https://www.lerna.by"
+    },
+    {
+      "name": "Artox",
+      "homepage": "https://www.artox.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "artox-lab/clarc-bundle": "^5.2.9",
+    "doctrine/annotations": "^1.8",
+    "symfony/framework-bundle": "^5.3",
+    "symfony/messenger": "5.3.*",
+    "symfony/security-bundle": "^5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "ArtoxLab\\Bundle\\ClarcRbacBundle\\": ""
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ArtoxLab\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

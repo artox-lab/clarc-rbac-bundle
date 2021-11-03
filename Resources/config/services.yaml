@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    ArtoxLab\Bundle\ClarcRbacBundle\Core\Interfaces\Security\Annotation\AnnotationsLoader:
+
+    artox_lab_clarc_rbac.rules_voter_middleware:
+        class: ArtoxLab\Bundle\ClarcRbacBundle\Core\Interfaces\Bus\Middleware\RulesVoterMiddleware
+        arguments:
+            $annotationLoader: '@ArtoxLab\Bundle\ClarcRbacBundle\Core\Interfaces\Security\Annotation\AnnotationsLoader'
