@@ -72,7 +72,6 @@ Create your own voter for some command
 
 namespace App\UseCases\Commands\Image\Add;
 
-use App\Interfaces\Services\RolesProvider\RolesProvider;
 use ArtoxLab\Bundle\ClarcRbacBundle\Core\Interfaces\Security\AbstractCommandVoter;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Core\User\UserInterface;
