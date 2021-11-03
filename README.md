@@ -86,10 +86,8 @@ final class Voter extends AbstractCommandVoter
     //@phpcs:ignore
     protected function hasRequestAccess(UserInterface $user, mixed $subject): bool
     {
-        foreach ($this->rolesProvider->getByCommandName('image.add') as $role) {
-            if ($this->security->isGranted($role) === true) {
-                return true;
-            }
+        if ($this->security->isGranted(ROLES::ROLE_ADMIN) === true) {
+            return true;
         }
 
         return false;
