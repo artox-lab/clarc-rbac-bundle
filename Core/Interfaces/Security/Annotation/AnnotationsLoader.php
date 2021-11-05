@@ -41,8 +41,10 @@ final class AnnotationsLoader implements AnnotationsLoaderInterface
      */
     private function lookup(ReflectionClass $reflection): iterable
     {
-        foreach ($reflection->getAttributes(RulesVoter::class) as $attribute) {
-            yield $attribute->newInstance();
+        if (PHP_VERSION_ID >= 80000) {
+            foreach ($reflection->getAttributes(RulesVoter::class) as $attribute) {
+                yield $attribute->newInstance();
+            }
         }
 
         foreach ($this->reader->getClassAnnotations($reflection) as $annotation) {
