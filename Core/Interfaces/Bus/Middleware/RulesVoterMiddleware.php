@@ -14,8 +14,14 @@ use ArtoxLab\Bundle\ClarcRbacBundle\Core\Interfaces\Security\Exceptions\AccessDe
 
 final class RulesVoterMiddleware implements MiddlewareInterface
 {
-    public function __construct(private Security $security, private AnnotationsLoaderInterface $annotationLoader)
+    private Security $security;
+
+    private AnnotationsLoaderInterface $annotationLoader;
+
+    public function __construct(Security $security, AnnotationsLoaderInterface $annotationLoader)
     {
+        $this->security = $security;
+        $this->annotationLoader = $annotationLoader;
     }
 
     /**

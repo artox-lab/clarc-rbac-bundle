@@ -26,10 +26,6 @@ abstract class AbstractCommandVoter extends Voter
     {
         $user = $token->getUser();
 
-        if ($user instanceof UserInterface === false) {
-            return $this->isPublic();
-        }
-
         if ($this->executionInterface() === self::REQUEST) {
             return $this->hasRequestAccess($user, $subject);
         }
@@ -52,6 +48,4 @@ abstract class AbstractCommandVoter extends Voter
     abstract protected function hasRequestAccess(UserInterface $user, mixed $subject): bool;
 
     abstract protected function hasCliAccess(UserInterface $user, mixed $subject): bool;
-
-    abstract protected function isPublic(): bool;
 }

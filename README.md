@@ -97,11 +97,6 @@ final class Voter extends AbstractCommandVoter
     {
         return true;
     }
-
-    protected function isPublic(): bool
-    {
-        return false;
-    }
 }
 ```
 ### Step 3: Print annotation

@@ -11,8 +11,11 @@ use RuntimeException;
 
 final class AnnotationsLoader implements AnnotationsLoaderInterface
 {
-    public function __construct(private Reader $reader)
+    private Reader $reader;
+
+    public function __construct(Reader $reader)
     {
+        $this->reader = $reader;
     }
 
     /**
